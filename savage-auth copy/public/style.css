@@ -1,0 +1,66 @@
+@import url('https://fonts.googleapis.com/css?family=Varela+Round');
+
+*{
+    box-sizing: border-box;
+    font-family: 'Varela Round', sans-serif;
+}
+h1{
+    font-family: 'Varela Round', sans-serif;
+}
+h2{
+    font-family: 'Varela Round', sans-serif;
+}
+h3{
+    font-family: 'Varela Round', sans-serif;
+}
+body{
+    background-color: lightsalmon;
+    color: darkslategrey;
+    padding-top:60px;
+    word-wrap:break-word;
+    /* background-image: url(img/coffee2.png);
+    background-repeat: no-repeat;
+    background-size: cover; */
+}
+img{
+  height: 300px;
+}
+a{
+
+}
+.messages{
+    
+}
+.well{
+    background-color: lightgreen;
+}
+.jumbotron{
+    background: salmon;
+}
+.col-sm-8{
+    background-color:salmon; 
+    padding-bottom: 18vh;
+    border-radius: 5px;
+}
+.complete{
+    color: #69C350;
+    text-decoration: line-through;
+}
+.name{
+    font-size: 14px;
+    color: #C3954B;
+}
+.order{
+    font-size: 22px;
+    color: #B86C3D;
+}
+.checker{
+    font-size: 14px;
+    color: #C66A53;
+}
+.hidden{
+    display: hidden;
+}
+.fa-check-circle{
+    font-size: 20px;
+}

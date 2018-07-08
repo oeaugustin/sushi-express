@@ -1,0 +1,66 @@
+<!doctype html>
+<html>
+<head>
+    <title>Sushi Express -- Dashboard</title>
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="container">
+    <div class="page-header text-center">
+        <h1><span class="fa fa-fish"> </span> Sushi Express Dashboard</h1>
+        <h2>Welcome, <%= user.local.email %></h2>
+        <a href="/logout" class="btn btn-default btn-sm">Logout</a>
+    </div>
+
+    <div class="row">
+        <!-- LOCAL INFORMATION -->
+        <div class="col-sm-4">
+            <div class="well">
+                <h3><span class="fa fa-user"></span> Local</h3>
+                <% if (user.local.email) { %>
+                    <p>
+                        <strong>id</strong>: <%= user._id %><br>
+                        <strong>email</strong>: <%= user.local.email %><br>
+                        <strong>password</strong>: <%= user.local.password %>
+                    </p>
+
+                    <a href="/unlink/local" class="btn btn-default">Unlink</a>
+                <% } else { %>
+                    <a href="/connect/local" class="btn btn-default">Connect Local</a>
+                <% } %>
+
+            </div>
+        </div>
+        <div class="col-sm-8">
+          <h3>Orders</h3>
+          <ul class="messages">
+          <% for(var i=0; i<messages.length; i++) {%>
+            <li class="message">
+              <span class="name"><%= messages[i].name %></span>
+              <span class="order"><%= messages[i].msg %></span>
+              <span class="hidden checker"><%= user.local.email %></span>
+              <span> <i class="fa fa-check-circle" aria-hidden="true"></i></span>
+              <!-- <span><i class="fa fa-thumbs-down" aria-hidden="true"></i></span> -->
+              <!-- <span><i class="fa fa-trash" aria-hidden="true"></i></span> -->
+            </li>
+          <% } %>
+          </ul>
+
+          <h2>Add an Order</h2>
+        <% if (user.local.email) { %>
+          <form action="/messages" method="POST">
+            <input type="text" value="<%= user.local.email %>" name="name">
+            <input type="text" placeholder="message" name="msg">
+            <button type="submit">Submit</button>
+          </form>
+        </div>
+        <% } %>
+
+</div>
+
+<script src="main.js"></script>
+
+</body>
+</html>
